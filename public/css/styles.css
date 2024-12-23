@@ -1,0 +1,142 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9fafb;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #2a9d8f;
+    margin-bottom: 10px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://source.unsplash.com/1920x600/?fitness,health') no-repeat center center/cover;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Section Styling */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Tips Section */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tip-card {
+    padding: 15px;
+    background: #eaf7f1;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #2a9d8f;
+}
+
+.tip-card h3 {
+    color: #264653;
+}
+
+/* Stats Section */
+.stats-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.stats-section li {
+    background: #f4f4f9;
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 4px solid #2a9d8f;
+}
+
+/* Form Section */
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-section input {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-section button {
+    padding: 10px 20px;
+    background: #2a9d8f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+.form-section button:hover {
+    background: #21867a;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #264653;
+    color: white;
+    font-size: 0.9em;
+}
+.hidden {
+    display: none;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+#backToTop:hover {
+    background: #21867a;
+}
