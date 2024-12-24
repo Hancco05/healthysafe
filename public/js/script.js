@@ -1,33 +1,49 @@
-// Manejo del formulario
-document.getElementById("subscriptionForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita el envío real del formulario
+document.addEventListener("DOMContentLoaded", () => {
+    // Manejo de formulario de suscripción
+    const showSubscribeButton = document.getElementById("showSubscribeForm");
+    const subscribeForm = document.getElementById("subscribeForm");
+    const subscribeFeedback = document.getElementById("subscribeFeedback");
 
-    const feedback = document.getElementById("feedback");
-    feedback.classList.remove("hidden");
-    feedback.textContent = "¡Gracias por suscribirte! Revisa tu correo pronto.";
+    showSubscribeButton.addEventListener("click", () => {
+        showSubscribeButton.style.display = "none"; // Oculta el botón
+        subscribeForm.classList.remove("hidden"); // Muestra el formulario
+    });
 
-    setTimeout(() => {
-        feedback.classList.add("hidden");
-    }, 5000); // Oculta el mensaje después de 5 segundos
+    subscribeForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        subscribeForm.classList.add("hidden");
+        subscribeFeedback.classList.remove("hidden");
+    });
 
-    // Reinicia los campos del formulario
-    this.reset();
-});
+    // Manejo de formulario de contacto
+    const contactForm = document.getElementById("contactForm");
+    const contactFeedback = document.getElementById("contactFeedback");
 
-// Botón "Volver arriba"
-const backToTop = document.getElementById("backToTop");
+    contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const fileInput = document.getElementById("file");
+        const maxFileSize = 16 * 1024 * 1024;
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        backToTop.classList.remove("hidden");
-    } else {
-        backToTop.classList.add("hidden");
-    }
-});
+        if (fileInput.files[0] && fileInput.files[0].size > maxFileSize) {
+            alert("El archivo supera el tamaño máximo permitido de 16 MB.");
+        } else {
+            contactFeedback.classList.remove("hidden");
+            contactForm.reset();
+        }
+    });
 
-backToTop.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth",
+    // Botón "Volver arriba"
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.remove("hidden");
+        } else {
+            backToTop.classList.add("hidden");
+        }
+    });
+
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 });

@@ -1,53 +1,65 @@
-/* General Styles */
+/* Estilo General */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    background-color: #f9fafb;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
     color: #333;
 }
 
 h1, h2, h3 {
     color: #2a9d8f;
-    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-/* Hero Section */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+/* Header */
 .hero {
-    background: url('https://source.unsplash.com/1920x600/?fitness,health') no-repeat center center/cover;
-    height: 60vh;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    background-image: url('https://source.unsplash.com/1600x900/?nature,health');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .hero .overlay {
-    background-color: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
-    border-radius: 8px;
 }
 
-/* Section Styling */
+/* Secciones */
 section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background: white;
+    padding: 40px 20px;
+}
+
+.intro-section, .tips-section, .stats-section, .benefits-section {
+    background-color: white;
+    margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-section img {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 10px;
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-/* Tips Section */
+/* Cards para los consejos */
 .tips-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -55,88 +67,139 @@ section img {
 }
 
 .tip-card {
-    padding: 15px;
-    background: #eaf7f1;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid #2a9d8f;
+    background-color: #2a9d8f;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .tip-card h3 {
-    color: #264653;
+    margin-top: 0;
 }
 
-/* Stats Section */
-.stats-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.stats-section li {
-    background: #f4f4f9;
-    margin: 10px 0;
-    padding: 10px;
-    border-left: 4px solid #2a9d8f;
-}
-
-/* Form Section */
-.form-section form {
+/* Estilo del formulario */
+.form-section form, .contact-form-section form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.form-section input {
+.form-section input, .form-section button,
+.contact-form-section input, .contact-form-section textarea, .contact-form-section button {
     padding: 10px;
-    width: 100%;
-    max-width: 400px;
+    margin: 10px 0;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
-.form-section button {
-    padding: 10px 20px;
-    background: #2a9d8f;
+.form-section button, .contact-form-section button {
+    background-color: #2a9d8f;
     color: white;
-    border: none;
-    border-radius: 4px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background 0.3s;
 }
 
-.form-section button:hover {
-    background: #21867a;
+.form-section button:hover, .contact-form-section button:hover {
+    background-color: #21867a;
 }
 
-/* Footer */
-footer {
+/* Sección de Feedback */
+#feedback, #contactFeedback {
+    color: #2a9d8f;
+    font-weight: bold;
     text-align: center;
-    padding: 10px;
-    background: #264653;
-    color: white;
-    font-size: 0.9em;
-}
-.hidden {
-    display: none;
 }
 
 #backToTop {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #2a9d8f;
+    background-color: #2a9d8f;
     color: white;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.2em;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s;
+    display: none;
+    transition: background-color 0.3s ease;
 }
 
 #backToTop:hover {
-    background: #21867a;
+    background-color: #21867a;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2a9d8f;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo global para las imágenes */
+.image-resized {
+    width: 800px;
+    height: 600px;
+    object-fit: cover; /* Ajusta el contenido dentro del tamaño */
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
 }
