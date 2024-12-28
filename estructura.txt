@@ -1,0 +1,22 @@
+mi_proyecto/
+├── manage.py
+├── mi_app/                       # Tu aplicación de Django.
+│   ├── migrations/
+│   ├── static/
+│   ├── templates/
+│   ├── views.py                  # Lógica de Django (API para el bot, si es necesario).
+│   ├── urls.py                   # Define endpoints para interactuar con el bot.
+│   └── models.py                 # Modelos que el bot puede consultar.
+├── mi_proyecto/                  # Configuración principal de Django.
+│   ├── __init__.py
+│   ├── settings.py               # Configuración general.
+│   ├── urls.py                   # Rutas principales del proyecto.
+│   └── wsgi.py
+├── bot/                          # Nueva carpeta para el código del bot.
+│   ├── bot.js                    # Archivo principal del bot.
+│   ├── package.json              # Dependencias de Node.js.
+│   ├── package-lock.json         # Archivo de bloqueo de versiones.
+│   └── README.md                 # Documentación para el bot.
+├── requirements.txt              # Dependencias de Django.
+├── db.sqlite3                    # Base de datos (o la que estés usando).
+└── .env                          # Variables de entorno compartidas entre Django y el bot.
